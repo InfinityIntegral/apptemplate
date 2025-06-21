@@ -50,12 +50,12 @@ Download the source code and open it in Qt and start coding your project. The do
 	- [x] SGXScrollBar (a scroll bar for the SGXScrollView, inherits QScrollBar)
 	- [x] SGXLayout (a widget that has custom scripting to manage the layout of other widgets, inherits QWidget)
 	- [x] SGXTouchReceiver (a nondisplaying widget that accepts touch events, inherits QWidget)
-	- [ ] SGXCuteSquishyVesicles (a widget overlay over the render space with visual effects including vesicles and sparkles, transparent to clicks)
 - [ ] OpenGL simplifications
      - [ ] SGXShaderDisplay (a widget that draws by OpenGL and contains a shader programme as a property, inherits QOpenGLWidget)
      - [ ] SGXShaderDataGroup (a struct containing a vao, a vbo, and a ebo, all in a group for 2D rendering, also contains methods for drawing and keeps tracks of buffer sizes)
 	- [ ] SGXTransformFeedbackGroup (a struct containing a shader programme and 2 buffers for transform feedback)
 	- [ ] SGXShaderGlobalVariable (a struct containing data to set shader uniforms)
+	- [ ] SGXCuteSquishyVesicles (a widget overlay over the render space with visual effects including vesicles and sparkles, transparent to clicks)
 - [ ] file system usage
      - [ ] SGXFileReader (struct allowing reading of all SGEXTN primitives from files with index seeking)
 	- [ ] SGXFileWriter (struct allowing writing of all SGEXTN primitives to files with overwriting by index)

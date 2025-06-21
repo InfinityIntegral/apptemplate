@@ -5,11 +5,6 @@
 #include <QFont>
 #include <QtCore/Qt>
 #include <QList>
-#include "../widgets/sgxrootwidget.h"
-#include "../userDefinedClasses/sgusignalemitter.h"
-#include "../primitives/sgxcolourrgba.h"
-#include "../widgets/sgxparentwidget.h"
-#include <QColor>
 
 QFont* SGXCentral::standardFont = nullptr;
 QFont* SGXCentral::iconsFont = nullptr;
@@ -19,9 +14,7 @@ float SGXCentral::applicationWindowHeight = 0.0f;
 float SGXCentral::renderAreaWidth = 0.0f;
 float SGXCentral::renderAreaHeight = 0.0f;
 float SGXCentral::sizeUnit = 0.0f;
-SGXRootWidget* SGXCentral::rootWindow = nullptr;
 SGXColourRGBA SGXCentral::noColour = SGXColourRGBA(255, 255, 255, 0);
-SGXParentWidget* SGXCentral::parentWindow = nullptr;
 void SGXCentral::doNothing(){}
 
 void SGXCentral::initialise(){
@@ -35,15 +28,11 @@ void SGXCentral::initialise(){
         SGXCentral::iconsFont = new QFont(l.first()); // NOLINT(cppcoreguidelines-owning-memory)
     }
     SGXCentral::signalEmitter = new SGUSignalEmitter(); // NOLINT(cppcoreguidelines-owning-memory)
-    SGXCentral::rootWindow = new SGXRootWidget(); // NOLINT(cppcoreguidelines-owning-memory)
-    SGXCentral::parentWindow = new SGXParentWidget(); // NOLINT(cppcoreguidelines-owning-memory)
-    (*SGXCentral::rootWindow).checkScreenSizeUpdate();
     SGUCentralManagement::initialise();
 }
 
 void SGXCentral::terminate(){
     SGUCentralManagement::terminate();
-    delete SGXCentral::rootWindow; // NOLINT(cppcoreguidelines-owning-memory)
     delete SGXCentral::signalEmitter; // NOLINT(cppcoreguidelines-owning-memory)
     delete SGXCentral::iconsFont; // NOLINT(cppcoreguidelines-owning-memory)
     delete SGXCentral::standardFont; // NOLINT(cppcoreguidelines-owning-memory)

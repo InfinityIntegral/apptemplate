@@ -2,10 +2,8 @@
 #define SGXCENTRAL_H
 
 #include <QObject>
-#include "../userDefinedClasses/sgusignalemitter.h"
-#include "../widgets/sgxrootwidget.h"
 #include "../primitives/sgxcolourrgba.h"
-#include "../widgets/sgxparentwidget.h"
+#include "../userDefinedClasses/sgusignalemitter.h"
 
 class SGXCentral : public QObject // non instantiable class for essential application data that should not be modified by the user
 {
@@ -27,9 +25,7 @@ public:
     static float renderAreaWidth; // width of area used to render UI
     static float renderAreaHeight; // height of area used to render UI
     static float sizeUnit; // unit used to measure UI size, 1 is minimum height of text
-    static SGXRootWidget* rootWindow; // root window of application
     static SGXColourRGBA noColour; // transparent
-    static SGXParentWidget* parentWindow; // render space of application
     static QColor getThemeColourAsQColour(int themeColourIndex, SGXColourRGBA defaultColour); // get theme colour from index
     static void doNothing(); // placeholder do nothing function for passing to button widgets
 };
